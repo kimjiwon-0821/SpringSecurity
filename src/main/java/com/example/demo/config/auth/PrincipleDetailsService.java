@@ -19,9 +19,10 @@ public class PrincipleDetailsService implements UserDetailsService{
 	
 	//security session(내부 Authentication(내부 UserDetails))
 	@Override
-	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException { 
+		// 여기 username이랑 dto의 username 이름이 같아야 security가 낚을 수 있음. 이름이 다르다면 security config 에서 이름을 수정해야 함.
 		// TODO Auto-generated method stub
-		User userEntity = userDAO.getUser(username);
+		User userEntity = userDAO.getUser(username); 
 		if(userEntity!=null) {
 			return new PrincipalDetails(userEntity);
 		}

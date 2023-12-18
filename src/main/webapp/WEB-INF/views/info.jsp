@@ -7,6 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>index page zzzzzzz</h1>
+<h1>info page zzzzzzz</h1>
+
+		<h3>${info.username}</h3>
+		<h3>${info.password}</h3>
+		<h3>${info.role}</h3>
 </body>
 </html>

@@ -1,5 +1,7 @@
 package com.example.demo.security;
 
+import java.security.Principal;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -8,11 +10,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.model.User;
 import com.example.demo.model.UserDAO;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Controller
+@Slf4j
 public class IndexController {
 	
 	@Autowired
@@ -22,7 +28,7 @@ public class IndexController {
 	
 	@GetMapping("/")
 	public String index() {
-		return "index";
+		return "main";
 	}
 	
 	@GetMapping("user")
@@ -61,10 +67,13 @@ public class IndexController {
 		return "redirect:/loginForm";
 	}
 	
-	@Secured("ROLE_ADMIN")
+
 	@GetMapping("/info")
-	public @ResponseBody String info() {
-		return "개인정보";
+	public ModelAndView info(Principal principal,ModelAndView mv,User user) {
+		user = userDAO.getUser(principal.getName());
+		mv.addObject("info", user);
+		mv.setViewName("info");
+		return mv;
 	}
 	
 	@PreAuthorize("hasRole('ROLE_MANAGER')or hasRole('ROLE_ADMIN')")
