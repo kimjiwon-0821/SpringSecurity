@@ -32,17 +32,17 @@ public class IndexController {
 	}
 	
 	@GetMapping("user")
-	public @ResponseBody String user() {
+	public String user() {
 		return "user";
 	}
 	
 	@GetMapping("admin")
-	public @ResponseBody  String admin() {
+	public String admin() {
 		return "admin";
 	}
 	
 	@GetMapping("manager")
-	public @ResponseBody  String manager() {
+	public String manager() {
 		return "manager";
 	}
 	
@@ -82,6 +82,10 @@ public class IndexController {
 		return "데이터 정보";
 	}
 	
+	@GetMapping("denied")
+	public String AccessDenied() {
+		return "denied";
+	}
 	
 
 }

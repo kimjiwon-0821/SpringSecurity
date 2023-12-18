@@ -6,8 +6,6 @@
 <meta charset="EUC-KR">
 <title>Insert title here</title>
 <style >
-    h2{
-    text-align: center;}
 	a{
 	color: black;
 	/*text-decoration:none;*/
@@ -15,8 +13,9 @@
 </style>
 </head>
 <body>
-	<h2>Admin Page</h2>
-	<hr/>
-<a href="../">뒤로가기</a>
+<h1>접근 권한이 없습니다.</h1>
+<!-- <a href="../">뒤로가기</a><br> -->
+<a href="${pageContext.request.contextPath}/">뒤로가기</a><br>
+<a href="../logout">로그아웃</a>
 </body>
 </html>
