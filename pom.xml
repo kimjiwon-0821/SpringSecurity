@@ -5,7 +5,8 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.7.17</version>
+<!--		<version>2.7.17</version>-->
+		<version>3.1.6</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
@@ -15,7 +16,7 @@
 	<name>SpringSecurity</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<java.version>8</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -33,7 +34,8 @@
 		<dependency>
 			<groupId>org.mybatis.spring.boot</groupId>
 			<artifactId>mybatis-spring-boot-starter</artifactId>
-			<version>2.3.1</version>
+<!--			<version>2.3.1</version>-->
+			<version>3.0.3</version>
 		</dependency>
 
 		<dependency>
@@ -73,20 +75,51 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		
 		<!--   라이브러리 추가  -->
 		<!--  jstl  -->
 		<!--  https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl-api  -->
-		<dependency>
+<!--		<dependency>
 		<groupId>javax.servlet</groupId>
 		<artifactId>jstl</artifactId>
-		<!--  <version>1.2</version>  -->
+		  <version>1.2</version>  
 		</dependency>
-		<!--   jasper  >> 톰켓 버전과 일치 시켜 준다  -->
-		<!--  https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-jasper  -->
+		   jasper  >> 톰켓 버전과 일치 시켜 준다  
+		  https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-jasper  
 		<dependency>
 		<groupId>org.apache.tomcat</groupId>
 		<artifactId>tomcat-jasper</artifactId>
 		<version>9.0.80</version>
+		</dependency>-->
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.tomcat.embed</groupId>
+		    <artifactId>tomcat-embed-jasper</artifactId>
+		    <scope>provided</scope>
+		</dependency>
+		<dependency>
+		    <groupId>jakarta.servlet</groupId>
+		    <artifactId>jakarta.servlet-api</artifactId>
+		    <version>6.0.0</version>
+		    <scope>provided</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/jakarta.servlet.jsp.jstl/jakarta.servlet.jsp.jstl-api -->
+		<dependency>
+		    <groupId>jakarta.servlet.jsp.jstl</groupId>
+		    <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+		    <version>3.0.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.glassfish.web/jakarta.servlet.jsp.jstl -->
+		<dependency>
+		    <groupId>org.glassfish.web</groupId>
+		    <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+		    <version>3.0.1</version>
 		</dependency>
 		
 	</dependencies>
